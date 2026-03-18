@@ -1,0 +1,189 @@
+:root {
+    --bg-color: #f5f7fa;
+    --text-color: #2c3e50;
+    --grid-bg: #ffffff;
+    --border-color: #d1d8e0;
+    --start-color: #4b7bec;
+    --end-color: #eb3b5a;
+    --obstacle-color: #4b6584;
+    --path-color: #2ed573;
+    --cell-hover: #f1f2f6;
+    --btn-primary: #3867d6;
+    --btn-primary-hover: #4b7bec;
+    --btn-secondary: #a5b1c2;
+    --btn-secondary-hover: #d1d8e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+main {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.left-panel {
+    flex: 0 0 320px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.right-panel {
+    flex: 0 0 auto;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+}
+
+.btn.primary { background-color: var(--btn-primary); }
+.btn.primary:hover { background-color: var(--btn-primary-hover); }
+
+.btn.secondary { background-color: var(--btn-secondary); color: white; }
+.btn.secondary:hover { background-color: var(--btn-secondary-hover); }
+
+.mode-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-selector label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.legend { margin-bottom: 1.5rem; }
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.legend-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+.empty-box { background: var(--grid-bg); }
+.start-box { background: var(--start-color); }
+.end-box { background: var(--end-color); }
+.obstacle-box { background: var(--obstacle-color); }
+
+.stats p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 90px);
+    grid-template-rows: repeat(5, 90px);
+    gap: 2px;
+    background-color: var(--border-color);
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cell {
+    background-color: var(--grid-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, transform 0.1s;
+    position: relative;
+    color: var(--text-color);
+}
+
+.cell:hover { background-color: var(--cell-hover); }
+.cell:active { transform: scale(0.95); }
+
+.cell.type-start { background-color: var(--start-color); color: white; }
+.cell.type-end { background-color: var(--end-color); color: white; }
+.cell.type-obstacle { background-color: var(--obstacle-color); cursor: not-allowed; }
+
+.cell.optimal-path {
+    background-color: var(--path-color) !important;
+    color: white;
+}
+
+.cell.type-start.optimal-path {
+    background-color: var(--start-color) !important;
+    box-shadow: inset 0 0 0 5px var(--path-color);
+}
+
+.arrow {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.value-text { font-size: 1.2rem; }

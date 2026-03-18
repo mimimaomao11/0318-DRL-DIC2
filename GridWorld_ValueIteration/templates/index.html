@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid World Value Iteration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grid World Value Iteration</h1>
+            <p>Interactive visualization of Value Iteration algorithm</p>
+        </header>
+        
+        <main>
+            <div class="left-panel">
+                <div class="controls">
+                    <h2>Controls</h2>
+                    <div class="button-group">
+                        <button id="btn-solve" class="btn primary">Run to Convergence</button>
+                        <button id="btn-reset" class="btn secondary">Reset Grid / Values</button>
+                    </div>
+                    
+
+
+                    <div class="legend">
+                        <h2>Drawing Tool (Select to paint)</h2>
+                        <div class="mode-selector" id="drawing-tools">
+                            <label class="legend-item">
+                                <input type="radio" name="draw-tool" value="start"> <div class="legend-box start-box"></div> Set Start
+                            </label>
+                            <label class="legend-item">
+                                <input type="radio" name="draw-tool" value="end"> <div class="legend-box end-box"></div> Set End
+                            </label>
+                            <label class="legend-item">
+                                <input type="radio" name="draw-tool" value="obstacle" checked> <div class="legend-box obstacle-box"></div> Toggle Obstacle
+                            </label>
+                            <label class="legend-item">
+                                <input type="radio" name="draw-tool" value="empty"> <div class="legend-box empty-box"></div> Erase to Empty
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="stats">
+                        <p>Status: <span id="iter-count">Not Run</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-panel">
+                <div id="grid" class="grid-container"></div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
