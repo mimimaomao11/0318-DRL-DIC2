@@ -1,6 +1,9 @@
 # Grid World Value Iteration Web App 
 
 這是一個基於 Flask 與強化學習 (Reinforcement Learning) 演算法構建的「格子世界 (Grid World)」Web 應用程式。本專案展示了**價值迭代 (Value Iteration)** 演算法如何幫助智能體 (Agent) 在帶有障礙物的環境中找到抵達目標的最佳策略 (Optimal Policy) 與各狀態的價值 (State Values)。
+
+## 🚀 快速開始
+
 demo site:https://0-three-pied.vercel.app/
 
 ## 🌟 專案特色
@@ -35,27 +38,6 @@ DIC2/
 └── templates/
     └── index.html      # 應用程式主頁面結構
 ```
-
-## 🚀 快速開始
-
-### 1. 依賴套件安裝
-請先確保您的環境已安裝 Python。在終端機中切換到本專案根目錄，執行以下指令安裝所需套件：
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. 啟動後端伺服器
-安裝完成後，執行以下指令啟動 Flask Application：
-
-```bash
-python app.py
-```
-伺服器將在本地端的 5000 port 運行 (預設具備 debug 模式)。
-
-### 3. 開啟網頁測試
-打開您的瀏覽器，並前往以下網址即可開始互動：
-👉 `http://127.0.0.1:5000` 或 `http://localhost:5000`
 
 ## 🛠️ 技術棧
 
